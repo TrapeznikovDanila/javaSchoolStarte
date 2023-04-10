@@ -1,16 +1,15 @@
 package com.digdes.school;
 
 import java.util.ArrayDeque;
-import java.util.List;
 import java.util.Objects;
 import java.util.Queue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public enum Patterns {
-    INSERT ("(INSERT|insert|Insert)"),
-    UPDATE ("(UPDATE|update|Update)"),
-    DELETE ("(DELETE|delete|Delete)"),
+    INSERT("(INSERT|insert|Insert)"),
+    UPDATE("(UPDATE|update|Update)"),
+    DELETE("(DELETE|delete|Delete)"),
     SELECT("(SELECT|select|Select)"),
     WHERE("(WHERE|where|Where)"),
     VALUES("(VALUES|values|Values)"),

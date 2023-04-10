@@ -311,11 +311,15 @@ public class JavaSchoolStarter {
             Matcher andMatcher = Patterns.getMatcher(Patterns.AND, expressionStr);
             Matcher orMatcher = Patterns.getMatcher(Patterns.OR, expressionStr);
             if (andMatcher.find(0)) {
-                return selection(readSingleExpression(singleExpressionStr), result);
+                Expression expression = readSingleExpression(singleExpressionStr);
+                checkExpression(expression);
+                return selection(expression, result);
             } else if (orMatcher.find(0)) {
                 HashSet<Map<String, Object>> results = new HashSet<>();
                 results.addAll(result);
-                results.addAll(selection(readSingleExpression(singleExpressionStr), collection));
+                Expression expression1 = readSingleExpression(singleExpressionStr);
+                checkExpression(expression1);
+                results.addAll(selection(expression1, collection));
                 return results.stream().toList();
             }
         }
